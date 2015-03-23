@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: My Application
+Bundle-SymbolicName: edu.hkcc.pacmanrobot.controller.ui.swt;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: edu.hkcc.pacmanrobot.controller.ui.swt.Activator
+Export-Package: edu.hkcc.pacmanrobot.controller.ui.swt;uses:="org.eclipse.scout.rt.ui.swt,org.eclipse.scout.rt.client.session,org.osgi.framework",
+ edu.hkcc.pacmanrobot.controller.ui.swt.application,
+ edu.hkcc.pacmanrobot.controller.ui.swt.application.menu,
+ edu.hkcc.pacmanrobot.controller.ui.swt.editor,
+ edu.hkcc.pacmanrobot.controller.ui.swt.perspective,
+ edu.hkcc.pacmanrobot.controller.ui.swt.views
+Require-Bundle: edu.hkcc.pacmanrobot.controller.client;visibility:=reexport,
+ edu.hkcc.pacmanrobot.controller.shared,
+ org.eclipse.scout.rt.ui.swt,
+ org.eclipse.scout.net,
+ org.eclipse.equinox.app,
+ org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.ui.views
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

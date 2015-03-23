@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: edu.hkcc.pacmanrobot.controller.shared
+Bundle-SymbolicName: edu.hkcc.pacmanrobot.controller.shared;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: edu.hkcc.pacmanrobot.controller.shared.Activator
+Export-Package: edu.hkcc.pacmanrobot.controller.shared,
+ edu.hkcc.pacmanrobot.controller.shared.services,
+ edu.hkcc.pacmanrobot.controller.shared.services.common.text
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.scout.rt.shared;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

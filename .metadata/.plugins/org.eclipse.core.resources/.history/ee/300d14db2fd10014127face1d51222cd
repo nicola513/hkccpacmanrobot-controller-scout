@@ -1,0 +1,9 @@
+package edu.hkcc.pacmanrobot.controller.shared;
+
+import org.eclipse.scout.rt.shared.data.form.AbstractFormData;
+
+public class LoginFormData extends AbstractFormData{
+
+public LoginFormData(){
+}
+}

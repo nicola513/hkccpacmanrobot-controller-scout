@@ -1,0 +1,52 @@
+!SESSION 2015-03-23 15:45:20.361 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_40
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product edu.hkcc.pacmanrobot.controller.server.product
+Command-line arguments:  -product edu.hkcc.pacmanrobot.controller.server.product -data C:\Users\13058456a\workspace/../runtime-controller-server-dev.product -dev file:C:/Users/13058456a/workspace/.metadata/.plugins/org.eclipse.pde.core/controller-server-dev.product/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY edu.hkcc.pacmanrobot.controller.server 1 0 2015-03-23 15:45:21.452
+!MESSAGE edu.hkcc.pacmanrobot.controller.server.ServerApplication.start(ServerApplication.java:35) controller server initialized
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:55.845
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:71) Config Bean Properties
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:55.845
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:73)  org.eclipse.scout.rt.server.services.common.file.RemoteFileService#rootPath=C:/Users/13058456a/workspace/edu.hkcc.pacmanrobot.controller.server/j2ee/ear/war/WEB-INF/remotefiles
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:55.845
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:73)  org.eclipse.scout.rt.server.commons.servletfilter.security.BasicSecurityFilter#realm=controller Development
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:55.845
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:73)  org.eclipse.scout.rt.server.commons.servletfilter.security.BasicSecurityFilter#users=admin=manager,allen=allen,blake=blake
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:55.845
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:73)  org.eclipse.scout.rt.server.commons.servletfilter.security.AnonymousSecurityFilter#active=true
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:55.845
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:73)  org.eclipse.scout.rt.server.commons.servletfilter.security.BasicSecurityFilter#active=false
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:55.846
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.SoapWsseJaasFilter
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:55.946
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.services.common.session.ServerSessionRegistryService
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:55.961
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for edu.hkcc.pacmanrobot.controller.server.services.common.security.AccessControlService
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:55.977
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.services.common.clientnotification.ClientNotificationService
+
+!ENTRY edu.hkcc.pacmanrobot.controller.server 1 0 2015-03-23 15:45:55.977
+!MESSAGE edu.hkcc.pacmanrobot.controller.server.ServerSession.execLoadSession(ServerSession.java:26) created a new session for anonymous
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:45:56.226
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for edu.hkcc.pacmanrobot.controller.server.services.DesktopService
+
+!ENTRY org.eclipse.scout.commons 1 0 2015-03-23 15:46:00.641
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for edu.hkcc.pacmanrobot.controller.server.LoginService
+
+!ENTRY edu.hkcc.pacmanrobot.controller.server 1 0 2015-03-23 15:46:25.472
+!MESSAGE edu.hkcc.pacmanrobot.controller.server.ServerSession.execLoadSession(ServerSession.java:26) created a new session for anonymous

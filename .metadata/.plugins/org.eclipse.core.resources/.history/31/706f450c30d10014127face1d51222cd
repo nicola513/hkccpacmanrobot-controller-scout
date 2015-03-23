@@ -1,0 +1,184 @@
+/**
+ * 
+ */
+package edu.hkcc.pacmanrobot.controller.client;
+
+import org.eclipse.scout.commons.annotations.FormData;
+import org.eclipse.scout.commons.annotations.Order;
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.rt.client.ui.form.AbstractForm;
+import org.eclipse.scout.rt.client.ui.form.AbstractFormHandler;
+import org.eclipse.scout.rt.client.ui.form.fields.button.AbstractCancelButton;
+import org.eclipse.scout.rt.client.ui.form.fields.button.AbstractOkButton;
+import org.eclipse.scout.rt.client.ui.form.fields.groupbox.AbstractGroupBox;
+import org.eclipse.scout.rt.client.ui.form.fields.textfield.AbstractTextField;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.service.SERVICES;
+
+import edu.hkcc.pacmanrobot.controller.client.LoginForm.MainBox.CancelButton;
+import edu.hkcc.pacmanrobot.controller.client.LoginForm.MainBox.OkButton;
+import edu.hkcc.pacmanrobot.controller.client.LoginForm.MainBox.UserInfoBox;
+import edu.hkcc.pacmanrobot.controller.client.LoginForm.MainBox.UserInfoBox.RobotNameField;
+import edu.hkcc.pacmanrobot.controller.client.LoginForm.MainBox.UserInfoBox.UsernameField;
+import edu.hkcc.pacmanrobot.controller.shared.ILoginService;
+import edu.hkcc.pacmanrobot.controller.shared.LoginFormData;
+import edu.hkcc.pacmanrobot.controller.shared.UpdateLoginPermission;
+
+/**
+ * @author 13058456a
+ */
+@FormData(value = LoginFormData.class, sdkCommand = FormData.SdkCommand.CREATE)
+public class LoginForm extends AbstractForm {
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public LoginForm() throws ProcessingException {
+    super();
+  }
+
+  @Override
+  protected String getConfiguredTitle() {
+    return TEXTS.get("Login");
+  }
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public void startModify() throws ProcessingException {
+    startInternal(new ModifyHandler());
+  }
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public void startNew() throws ProcessingException {
+    startInternal(new NewHandler());
+  }
+
+  /**
+   * @return the CancelButton
+   */
+  public CancelButton getCancelButton() {
+    return getFieldByClass(CancelButton.class);
+  }
+
+  /**
+   * @return the MainBox
+   */
+  public MainBox getMainBox() {
+    return getFieldByClass(MainBox.class);
+  }
+
+  /**
+   * @return the OkButton
+   */
+  public OkButton getOkButton() {
+    return getFieldByClass(OkButton.class);
+  }
+
+  /**
+   * @return the RobotNameField
+   */
+  public RobotNameField getRobotNameField(){
+    return getFieldByClass(RobotNameField.class);
+  }
+
+  /**
+   * @return the UserInfoBox
+   */
+  public UserInfoBox getUserInfoBox(){
+    return getFieldByClass(UserInfoBox.class);
+  }
+
+  /**
+   * @return the UsernameField
+   */
+  public UsernameField getUsernameField(){
+    return getFieldByClass(UsernameField.class);
+  }
+
+  @Order(10.0)
+  public class MainBox extends AbstractGroupBox {
+
+    @Order(10.0)
+    public class UserInfoBox extends AbstractGroupBox {
+
+      @Override
+      protected String getConfiguredLabel() {
+        return TEXTS.get("UserInfo");
+      }
+
+      @Order(10.0)
+      public class UsernameField extends AbstractTextField {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("Username");
+        }
+      }
+
+      @Order(20.0)
+      public class RobotNameField extends AbstractTextField {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("RobotName");
+        }
+      }
+    }
+
+    @Order(20.0)
+    public class OkButton extends AbstractOkButton {
+    }
+
+    @Order(30.0)
+    public class CancelButton extends AbstractCancelButton {
+    }
+  }
+
+  public class ModifyHandler extends AbstractFormHandler {
+
+    @Override
+    protected void execLoad() throws ProcessingException {
+      ILoginService service = SERVICES.getService(ILoginService.class);
+      LoginFormData formData = new LoginFormData();
+      exportFormData(formData);
+      formData = service.load(formData);
+      importFormData(formData);
+      setEnabledPermission(new UpdateLoginPermission());
+
+    }
+
+    @Override
+    protected void execStore() throws ProcessingException {
+      ILoginService service = SERVICES.getService(ILoginService.class);
+      LoginFormData formData = new LoginFormData();
+      exportFormData(formData);
+      formData = service.store(formData);
+
+    }
+  }
+
+  public class NewHandler extends AbstractFormHandler {
+
+    @Override
+    protected void execLoad() throws ProcessingException {
+      ILoginService service = SERVICES.getService(ILoginService.class);
+      LoginFormData formData = new LoginFormData();
+      exportFormData(formData);
+      formData = service.prepareCreate(formData);
+      importFormData(formData);
+
+    }
+
+    @Override
+    protected void execStore() throws ProcessingException {
+      ILoginService service = SERVICES.getService(ILoginService.class);
+      LoginFormData formData = new LoginFormData();
+      exportFormData(formData);
+      formData = service.create(formData);
+
+    }
+  }
+}

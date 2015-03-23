@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+org.eclipse.scout.sdk.ui.view.scoutExplorer.bundleDisplayStyle=grouped
+pref_scout_project_prod_launcher_edu.hkcc.pacmanrobot.controller.shared=/edu.hkcc.pacmanrobot.controller.server/products/development/controller-server-dev.product,/edu.hkcc.pacmanrobot.controller.ui.rap/products/development/controller-rap-dev.product,/edu.hkcc.pacmanrobot.controller.ui.swing/products/development/controller-swing-client-dev.product,/edu.hkcc.pacmanrobot.controller.ui.swt/products/development/controller-swt-client-dev.product

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.scout.rt.rap"
+      label="%featureName"
+      version="4.0.200.20150218-0841"
+      provider-name="%providerName">
+
+   <description url="http://www.eclipse.org/scout/">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/releases/luna"/>
+      <discovery label="%updateSiteName" url="http://download.eclipse.org/releases/luna"/>
+   </url>
+
+   <requires>
+      <import feature="org.eclipse.rap.feature" version="2.0.0" match="compatible"/>
+      <import feature="org.eclipse.scout.rt.client" version="4.0.200" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.scout.rt.ui.rap"
+         download-size="1230"
+         install-size="2391"
+         version="4.0.200.20150107-1158"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.scout.rt.ui.rap.workbench"
+         download-size="65"
+         install-size="136"
+         version="4.0.200.20150107-1158"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.scout.svg.ui.rap"
+         download-size="32"
+         install-size="62"
+         version="4.0.200.20150107-1158"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.scout.rt.ui.rap.theme.rayo"
+         download-size="282"
+         install-size="332"
+         version="4.0.200.20150107-1158"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.scout.rt.ui.rap.theme.rayo.mobile"
+         download-size="17"
+         install-size="72"
+         version="4.0.200.20150107-1158"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.scout.rt.ui.rap.mobile"
+         download-size="198"
+         install-size="388"
+         version="4.0.200.20150107-1158"
+         unpack="false"/>
+
+</feature>

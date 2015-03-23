@@ -1,0 +1,58 @@
+/**
+ * 
+ */
+package edu.hkcc.pacmanrobot.controller.server;
+
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.commons.exception.VetoException;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.rt.shared.services.common.security.ACCESS;
+import org.eclipse.scout.service.AbstractService;
+
+import edu.hkcc.pacmanrobot.controller.shared.CreateLoginPermission;
+import edu.hkcc.pacmanrobot.controller.shared.ILoginService;
+import edu.hkcc.pacmanrobot.controller.shared.LoginFormData;
+import edu.hkcc.pacmanrobot.controller.shared.ReadLoginPermission;
+import edu.hkcc.pacmanrobot.controller.shared.UpdateLoginPermission;
+
+/**
+ * @author 13058456a
+ */
+public class LoginService extends AbstractService implements ILoginService {
+
+  @Override
+  public LoginFormData create(LoginFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new CreateLoginPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    //TODO [13058456a] business logic here.
+    return formData;
+  }
+
+  @Override
+  public LoginFormData load(LoginFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new ReadLoginPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    //TODO [13058456a] business logic here.
+    return formData;
+  }
+
+  @Override
+  public LoginFormData prepareCreate(LoginFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new CreateLoginPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    //TODO [13058456a] business logic here.
+    return formData;
+  }
+
+  @Override
+  public LoginFormData store(LoginFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new UpdateLoginPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    //TODO [13058456a] business logic here.
+    return formData;
+  }
+}
